@@ -303,10 +303,9 @@ export default function App() {
           </div>
           <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-video bg-gray-900 group">
             <img 
-              src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80&w=1200&h=800" 
+              src="/image.jpg" 
               alt="Skincare Vlog Background" 
               className="w-full h-full object-cover opacity-70"
-              referrerPolicy="no-referrer"
             />
             {/* Video Title Bar */}
             <div className="absolute top-0 left-0 w-full p-4 bg-gradient-to-b from-black/90 to-transparent z-10">
