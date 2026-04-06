@@ -1,0 +1,7 @@
+{
+  "name": "Rutube Contextual Ads MediaKit",
+  "description": "Интерактивный медиакит нового рекламного инструментария Rutube: контекстный таргетинг и омниканальная активация.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
