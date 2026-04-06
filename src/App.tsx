@@ -1,19 +1,20 @@
+// App initialized
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { 
-  Target, 
-  TrendingUp, 
-  Users, 
-  Zap, 
-  ShoppingBag, 
-  Calendar, 
-  Star, 
-  ArrowRight, 
-  CheckCircle2, 
-  Play, 
-  BarChart3, 
-  Layers, 
-  Globe, 
+import {
+  Target,
+  TrendingUp,
+  Users,
+  Zap,
+  ShoppingBag,
+  Calendar,
+  Star,
+  ArrowRight,
+  CheckCircle2,
+  Play,
+  BarChart3,
+  Layers,
+  Globe,
   ChevronRight,
   MousePointer2,
   Database,
@@ -55,7 +56,7 @@ interface CardProps {
 }
 
 const Card = ({ children, className }: CardProps) => (
-  <motion.div 
+  <motion.div
     whileHover={{ y: -5 }}
     className={cn("bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 transition-all", className)}
   >
@@ -73,13 +74,13 @@ const ContactModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => voi
   if (!isOpen) return null;
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         onClick={onClose}
         className="absolute inset-0 bg-black/90 backdrop-blur-md"
       />
-      <motion.div 
+      <motion.div
         initial={{ scale: 0.95, opacity: 0, y: 20 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}
         className="bg-[#151926] border border-white/10 p-6 md:p-10 rounded-[32px] md:rounded-[40px] max-w-lg w-full relative z-10 shadow-2xl"
@@ -87,16 +88,16 @@ const ContactModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => voi
         <button onClick={onClose} className="absolute top-4 right-4 md:top-6 md:right-6 text-gray-500 hover:text-white transition-colors">
           <X className="w-6 h-6" />
         </button>
-        
+
         <div className="mb-6 md:mb-8">
           <Badge className="mb-4">Контактное лицо</Badge>
           <h3 className="text-2xl md:text-3xl font-black text-white mb-2">Эльвира Ямшанова</h3>
           <p className="text-blue-400 font-bold uppercase tracking-wider text-[10px] md:text-xs">руководитель развития AdTech Data Nova</p>
         </div>
-        
+
         <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
-          <a 
-            href="tel:+79685726156" 
+          <a
+            href="tel:+79685726156"
             className="flex items-center gap-3 md:gap-4 p-3 md:p-4 bg-white/5 rounded-2xl border border-white/5 hover:border-blue-500/50 hover:bg-blue-500/5 transition-all group"
           >
             <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-600/20 rounded-xl flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all">
@@ -107,9 +108,9 @@ const ContactModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => voi
               <div className="text-base md:text-lg font-bold">+7 (968) 572-61-56</div>
             </div>
           </a>
-          
-          <a 
-            href="mailto:eiiamshanova@gid.ru" 
+
+          <a
+            href="mailto:eiiamshanova@gid.ru"
             className="flex items-center gap-3 md:gap-4 p-3 md:p-4 bg-white/5 rounded-2xl border border-white/5 hover:border-blue-500/50 hover:bg-blue-500/5 transition-all group"
           >
             <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-600/20 rounded-xl flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all">
@@ -121,8 +122,8 @@ const ContactModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => voi
             </div>
           </a>
 
-          <a 
-            href="https://t.me/el_yamshanova" 
+          <a
+            href="https://t.me/el_yamshanova"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 md:gap-4 p-3 md:p-4 bg-white/5 rounded-2xl border border-white/5 hover:border-blue-500/50 hover:bg-blue-500/5 transition-all group"
@@ -136,8 +137,8 @@ const ContactModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => voi
             </div>
           </a>
         </div>
-        
-        <button 
+
+        <button
           onClick={onClose}
           className="w-full py-3 md:py-4 bg-white/10 hover:bg-white/20 text-white rounded-2xl font-bold transition-all text-sm md:text-base"
         >
@@ -175,13 +176,13 @@ export default function App() {
             ))}
           </div>
           <div className="flex items-center gap-4">
-            <button 
+            <button
               onClick={() => setIsModalOpen(true)}
               className="hidden sm:block bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-full text-sm font-bold transition-all shadow-lg shadow-blue-600/20"
             >
               Подать заявку
             </button>
-            <button 
+            <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden text-white p-2"
             >
@@ -192,22 +193,22 @@ export default function App() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             className="md:hidden absolute top-full left-0 w-full bg-[#0a0c14] border-b border-white/5 p-6 flex flex-col gap-4 shadow-2xl"
           >
             {navLinks.map((link) => (
-              <a 
-                key={link.href} 
-                href={link.href} 
+              <a
+                key={link.href}
+                href={link.href}
                 onClick={() => setIsMenuOpen(false)}
                 className="text-lg font-medium text-gray-400 hover:text-white transition-colors"
               >
                 {link.label}
               </a>
             ))}
-            <button 
+            <button
               onClick={() => {
                 setIsMenuOpen(false);
                 setIsModalOpen(true);
@@ -302,16 +303,16 @@ export default function App() {
             </div>
           </div>
           <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-video bg-gray-900 group">
-            <img 
-              src="/image.jpg" 
-              alt="Skincare Vlog Background" 
+            <img
+              src="/image.jpg"
+              alt="Skincare Vlog Background"
               className="w-full h-full object-cover opacity-70"
             />
             {/* Video Title Bar */}
             <div className="absolute top-0 left-0 w-full p-4 bg-gradient-to-b from-black/90 to-transparent z-10">
               <div className="text-xs font-bold text-white">Уход за кожей / Уход за телом /</div>
             </div>
-            
+
             {/* Ad Banner (Wildberries) */}
             <div className="absolute top-12 right-4 bg-white/10 backdrop-blur-xl p-4 rounded-xl border border-white/20 max-w-[220px] z-20 shadow-2xl">
               <div className="flex items-center gap-2 mb-2">
@@ -366,20 +367,20 @@ export default function App() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { 
-              title: "Интересы", 
-              icon: Users, 
-              items: ["Готовка → кухня, посуда", "Beauty → уход, парфюм", "Авто → шины, масла", "DIY / ремонт → инструменты", "Спорт → outdoor, питание", "Дети / семья → игрушки"] 
+            {
+              title: "Интересы",
+              icon: Users,
+              items: ["Готовка → кухня, посуда", "Beauty → уход, парфюм", "Авто → шины, масла", "DIY / ремонт → инструменты", "Спорт → outdoor, питание", "Дети / семья → игрушки"]
             },
-            { 
-              title: "Сезонность", 
-              icon: Calendar, 
-              items: ["Лето → outdoor, SPF", "Осень → back to school", "Зима → подарки, НГ", "Весна → дача, ремонт", "Black Friday → фиды", "Отпускной сезон → travel"] 
+            {
+              title: "Сезонность",
+              icon: Calendar,
+              items: ["Лето → outdoor, SPF", "Осень → back to school", "Зима → подарки, НГ", "Весна → дача, ремонт", "Black Friday → фиды", "Отпускной сезон → travel"]
             },
-            { 
-              title: "Событийные поводы", 
-              icon: Star, 
-              items: ["День рождения → наборы", "Свадьба / выпускной → beauty", "Переезд → мебель, техника", "Рождение ребёнка → товары", "Спортивные события → атрибутика", "Гендерные праздники → подарки"] 
+            {
+              title: "Событийные поводы",
+              icon: Star,
+              items: ["День рождения → наборы", "Свадьба / выпускной → beauty", "Переезд → мебель, техника", "Рождение ребёнка → товары", "Спортивные события → атрибутика", "Гендерные праздники → подарки"]
             }
           ].map((cat, i) => (
             <Card key={i}>
@@ -430,27 +431,27 @@ export default function App() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { 
-              id: "01", 
-              badge: "Охват + ассортимент", 
-              title: "Тематическая подборка", 
-              desc: "Баннер с тематической подборкой товаров.", 
+            {
+              id: "01",
+              badge: "Охват + ассортимент",
+              title: "Тематическая подборка",
+              desc: "Баннер с тематической подборкой товаров.",
               example: "«Хиты в уходе за лицом со скидкой –40%»",
               color: "border-blue-500"
             },
-            { 
-              id: "02", 
-              badge: "Конверсия в категорию", 
-              title: "Продвижение категории", 
-              desc: "Продвижение конкретной товарной категории с промокодом.", 
+            {
+              id: "02",
+              badge: "Конверсия в категорию",
+              title: "Продвижение категории",
+              desc: "Продвижение конкретной товарной категории с промокодом.",
               example: "«Промокод АПРЕЛЬ — 20% на уход за лицом»",
               color: "border-green-500"
             },
-            { 
-              id: "03", 
-              badge: "Точечная конверсия", 
-              title: "Конкретный товар", 
-              desc: "Продвижение одного SKU с ценой. Максимальная точность.", 
+            {
+              id: "03",
+              badge: "Точечная конверсия",
+              title: "Конкретный товар",
+              desc: "Продвижение одного SKU с ценой. Максимальная точность.",
               example: "«Праймер Mixit за 399 руб.»",
               color: "border-orange-500"
             }
@@ -475,7 +476,7 @@ export default function App() {
           <h3 className="text-2xl font-bold text-blue-400">Один интерес — разные товары.</h3>
           <p className="text-gray-400 mt-4">Золотая Запись ДатаНова определяет, какой именно товар показать конкретному пользователю</p>
         </div>
-        
+
         <div className="bg-blue-900/20 border border-blue-500/30 rounded-3xl p-8 mb-8 relative overflow-hidden">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/10 blur-[100px]" />
           <div className="text-center mb-8">
@@ -564,15 +565,15 @@ export default function App() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <Card>
             <h4 className="text-blue-500 font-bold mb-4">Триггер</h4>
-            <p className="text-sm text-gray-400">Пользователь за неделю посмотрел 3+ ролика: <br/>• влоги из Турции <br/>• «что взять в отпуск» <br/>• обзор отелей</p>
+            <p className="text-sm text-gray-400">Пользователь за неделю посмотрел 3+ ролика: <br />• влоги из Турции <br />• «что взять в отпуск» <br />• обзор отелей</p>
           </Card>
           <Card>
             <h4 className="text-blue-500 font-bold mb-4">Фид товаров</h4>
-            <p className="text-sm text-gray-400">Категорийная подборка: <br/>• чемоданы и сумки <br/>• travel-size косметика <br/>• power bank / адаптеры <br/>• страховка для выезда</p>
+            <p className="text-sm text-gray-400">Категорийная подборка: <br />• чемоданы и сумки <br />• travel-size косметика <br />• power bank / адаптеры <br />• страховка для выезда</p>
           </Card>
           <Card>
             <h4 className="text-blue-500 font-bold mb-4">Сегментация</h4>
-            <p className="text-sm text-gray-400">Золотая Запись: <br/>• Высокий доход → премиум SKU <br/>• Дети → семейные наборы и страховки</p>
+            <p className="text-sm text-gray-400">Золотая Запись: <br />• Высокий доход → премиум SKU <br />• Дети → семейные наборы и страховки</p>
           </Card>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -615,7 +616,7 @@ export default function App() {
           <div className="bg-white text-black p-8 rounded-[40px] shadow-2xl">
             <h3 className="text-3xl font-black mb-4">Подать заявку на размещение</h3>
             <p className="text-gray-600 mb-6">Обсудим вашу категорию, подберём механику и рассчитаем прогноз KPI бесплатно.</p>
-            <button 
+            <button
               onClick={() => setIsModalOpen(true)}
               className="w-full bg-blue-600 text-white py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 hover:bg-blue-700 transition-all"
             >
