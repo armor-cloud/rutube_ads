@@ -12,6 +12,8 @@ import {
   ArrowRight,
   CheckCircle2,
   Play,
+  Pause,
+  Volume2,
   BarChart3,
   Layers,
   Globe,
@@ -92,7 +94,7 @@ const ContactModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => voi
         <div className="mb-6 md:mb-8">
           <Badge className="mb-4">Контактное лицо</Badge>
           <h3 className="text-2xl md:text-3xl font-black text-white mb-2">Эльвира Ямшанова</h3>
-          <p className="text-blue-400 font-bold uppercase tracking-wider text-[10px] md:text-xs">руководитель развития AdTech Data Nova</p>
+          <p className="text-blue-400 font-bold uppercase tracking-wider text-[10px] md:text-xs">руководитель развития AdTech ДатаНова</p>
         </div>
 
         <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
@@ -168,7 +170,7 @@ export default function App() {
       <nav className="fixed top-0 w-full z-50 bg-[#0a0c14]/80 backdrop-blur-lg border-b border-white/5 px-6 py-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center">
-            <span className="font-bold text-lg md:text-xl tracking-tight uppercase">DATANOVA <span className="text-blue-500">×</span> RUTUBE</span>
+            <span className="font-bold text-lg md:text-xl tracking-tight uppercase">ДАТАНОВА <span className="text-blue-500">×</span> RUTUBE</span>
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
             {navLinks.map((link) => (
@@ -230,7 +232,7 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Badge className="mb-6">DataNova × Rutube</Badge>
+            <Badge className="mb-6">ДатаНова × Rutube</Badge>
             <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-8 leading-[1.2]">
               Превращаем интент в выручку с помощью <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">контекстного таргетинга</span> и омниканальной активации.
@@ -309,49 +311,45 @@ export default function App() {
               className="w-full h-full object-cover opacity-70"
             />
             {/* Video Title Bar */}
-            <div className="absolute top-0 left-0 w-full p-4 bg-gradient-to-b from-black/90 to-transparent z-10">
-              <div className="text-xs font-bold text-white">Уход за кожей / Уход за телом /</div>
+            <div className="absolute top-0 left-0 w-full p-2 md:p-4 bg-gradient-to-b from-black/90 to-transparent z-10">
+              <div className="text-[10px] md:text-xs font-bold text-white">Уход за кожей / Уход за телом /</div>
             </div>
 
             {/* Ad Banner (Wildberries) */}
-            <div className="absolute top-12 right-4 bg-white/10 backdrop-blur-xl p-4 rounded-xl border border-white/20 max-w-[220px] z-20 shadow-2xl">
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-7 h-7 bg-purple-600 rounded-lg flex items-center justify-center text-[10px] font-bold text-white">WB</div>
+            <div className="absolute top-7 md:top-12 right-2 md:right-4 bg-white/10 backdrop-blur-xl p-2 md:p-4 rounded-lg md:rounded-xl border border-white/20 max-w-[130px] md:max-w-[220px] z-20 shadow-2xl">
+              <div className="flex items-center gap-1.5 md:gap-2 mb-1.5 md:mb-2">
+                <div className="w-5 h-5 md:w-7 md:h-7 bg-purple-600 rounded flex items-center justify-center text-[8px] md:text-[10px] font-bold text-white shrink-0">WB</div>
                 <div className="flex flex-col">
-                  <span className="text-[10px] font-bold text-white">Wildberries</span>
-                  <span className="text-[8px] text-gray-400">Реклама 18+</span>
+                  <span className="text-[8px] md:text-[10px] font-bold text-white leading-none">Wildberries</span>
+                  <span className="text-[6px] md:text-[8px] text-gray-400 leading-tight">Реклама 18+</span>
                 </div>
               </div>
-              <div className="text-[11px] font-bold text-white mb-3 leading-tight">Хиты в уходе за лицом со скидкой -40%</div>
-              <button className="w-full bg-blue-600 hover:bg-blue-500 text-white text-[10px] font-bold py-2 rounded-lg transition-colors">
+              <div className="text-[8px] md:text-[11px] font-bold text-white mb-1.5 md:mb-3 leading-tight md:leading-tight">Хиты в уходе за лицом со скидкой -40%</div>
+              <button className="w-full bg-blue-600 hover:bg-blue-500 text-white text-[8px] md:text-[10px] font-bold py-1 md:py-2 rounded md:rounded-lg transition-colors">
                 Перейти
               </button>
             </div>
 
             {/* Playback Controls */}
-            <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/90 to-transparent z-10">
-              <div className="flex items-center gap-4 mb-3">
-                <div className="text-[10px] font-medium text-white">04:02</div>
-                <div className="flex-grow h-1.5 bg-white/20 rounded-full overflow-hidden relative">
+            <div className="absolute bottom-0 left-0 w-full p-2 md:p-6 bg-gradient-to-t from-black/90 to-transparent z-10">
+              <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-3">
+                <div className="text-[8px] md:text-[10px] font-medium text-white">04:02</div>
+                <div className="flex-grow h-1 md:h-1.5 bg-white/20 rounded-full overflow-hidden relative">
                   <div className="absolute inset-y-0 left-0 w-[25%] bg-blue-500" />
-                  <div className="absolute left-[25%] top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-lg -translate-x-1/2" />
+                  <div className="absolute left-[25%] top-1/2 -translate-y-1/2 w-2 h-2 md:w-3 md:h-3 bg-white rounded-full shadow-lg -translate-x-1/2" />
                 </div>
-                <div className="text-[10px] font-medium text-white">19:15</div>
+                <div className="text-[8px] md:text-[10px] font-medium text-white">19:15</div>
               </div>
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-6">
-                  <Play className="w-5 h-5 text-white fill-white cursor-pointer" />
-                  <div className="flex items-center gap-4">
-                    <div className="w-5 h-5 border-2 border-white/80 rounded-sm cursor-pointer" />
-                    <div className="w-5 h-5 flex items-center justify-center cursor-pointer">
-                      <div className="w-1 h-4 bg-white/80 rounded-full mx-0.5" />
-                      <div className="w-1 h-4 bg-white/80 rounded-full mx-0.5" />
-                    </div>
+                <div className="flex items-center gap-3 md:gap-6">
+                  <Pause className="w-3 h-3 md:w-5 md:h-5 text-white fill-white" />
+                  <div className="flex items-center gap-2 md:gap-4">
+                    <Volume2 className="w-3 h-3 md:w-5 md:h-5 text-white" />
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-5 h-5 bg-white/20 rounded-sm cursor-pointer hover:bg-white/40 transition-colors" />
-                  <div className="w-5 h-5 bg-white/20 rounded-sm cursor-pointer hover:bg-white/40 transition-colors" />
+                <div className="flex items-center gap-2 md:gap-4">
+                  <div className="w-3 h-3 md:w-5 md:h-5 bg-white/20 rounded-sm hover:bg-white/40 transition-colors" />
+                  <div className="w-3 h-3 md:w-5 md:h-5 bg-white/20 rounded-sm hover:bg-white/40 transition-colors" />
                 </div>
               </div>
             </div>
@@ -630,7 +628,7 @@ export default function App() {
       <footer className="py-12 px-6 border-t border-white/5 text-center text-gray-500 text-sm">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center">
-            <span className="font-bold text-white uppercase tracking-tighter">DATANOVA <span className="text-blue-500">×</span> RUTUBE</span>
+            <span className="font-bold text-white uppercase tracking-tighter">ДАТАНОВА <span className="text-blue-500">×</span> RUTUBE</span>
           </div>
           <p>ДатаНова × Rutube | Контекстный таргетинг | Омниканальная активация | 2026</p>
         </div>
