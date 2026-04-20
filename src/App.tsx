@@ -246,6 +246,64 @@ export default function App() {
         </div>
       </Section>
 
+      {/* Rutube Stats */}
+      <Section id="stats">
+        <div className="text-center mb-10">
+          <Badge className="mb-4">Статистика</Badge>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Цифры и динамика Рутуб</h2>
+          <p className="text-gray-400">Рост аудитории и вовлеченности в 1 квартале 2026 года</p>
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+          <Card className="text-center p-6 border-blue-500/20 hover:border-blue-500/50">
+             <div className="text-4xl font-black text-white mb-2">+33%</div>
+             <div className="text-sm font-bold text-gray-300 mb-1">ОБЩИЙ РОСТ</div>
+             <div className="text-xs text-blue-400/80">(Q1 2026 / Q1 2025)</div>
+          </Card>
+          <Card className="text-center p-6 border-blue-500/20 hover:border-blue-500/50">
+             <div className="text-4xl font-black text-white mb-2">15 млрд</div>
+             <div className="text-sm font-bold text-gray-300 mb-1">ПРОСМОТРОВ В Q1</div>
+             <div className="text-xs text-blue-400/80">(+1.8 МЛРД VS Q1 2025)</div>
+          </Card>
+          <Card className="text-center p-6 border-blue-500/20 hover:border-blue-500/50">
+             <div className="text-4xl font-black text-white mb-2">83.7 млн</div>
+             <div className="text-sm font-bold text-gray-300 mb-1">СРЕДНИЙ MAU</div>
+             <div className="text-xs text-blue-400/80">В Q1 2026</div>
+          </Card>
+          <Card className="text-center p-6 border-blue-500/20 hover:border-blue-500/50">
+             <div className="text-4xl font-black text-white mb-2">21.2 млн</div>
+             <div className="text-sm font-bold text-gray-300 mb-1">СРЕДНИЙ DAU</div>
+             <div className="text-xs text-blue-400/80">В Q1 2026</div>
+          </Card>
+        </div>
+
+        <div className="text-center mb-8 mt-12">
+          <h3 className="text-2xl md:text-3xl font-bold">Рост времени просмотра по категориям</h3>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          {[
+            { value: "x4", label: "КРАСОТА", color: "from-pink-500 to-rose-500", glow: "group-hover:shadow-[0_0_30px_-5px_rgba(236,72,153,0.3)]" },
+            { value: "x3", label: "ЛАЙФСТАЙЛ", color: "from-purple-500 to-indigo-500", glow: "group-hover:shadow-[0_0_30px_-5px_rgba(168,85,247,0.3)]" },
+            { value: "x2", label: "ОБЗОРЫ И РАСПАКОВКИ", color: "from-blue-500 to-cyan-500", glow: "group-hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.3)]" },
+            { value: "+61%", label: "ЕДА", color: "from-green-400 to-emerald-500", glow: "group-hover:shadow-[0_0_30px_-5px_rgba(16,185,129,0.3)]" },
+            { value: "+27%", label: "АВТО-МОТО", color: "from-orange-400 to-red-500", glow: "group-hover:shadow-[0_0_30px_-5px_rgba(249,115,22,0.3)]" }
+          ].map((cat, i) => (
+            <div key={i} className={`bg-[#151926] border border-white/10 p-6 rounded-2xl flex flex-col items-center justify-center relative overflow-hidden group transition-all duration-300 hover:-translate-y-2 hover:bg-white/5 ${cat.glow}`}>
+              <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${cat.color} opacity-70 group-hover:opacity-100 transition-opacity`} />
+              <div className="absolute -bottom-10 -right-10 w-24 h-24 bg-white/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500" />
+              
+              <div className={`text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-br ${cat.color} mb-3 drop-shadow-md`}>
+                {cat.value}
+              </div>
+              <div className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-gray-300 text-center leading-tight">
+                {cat.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
       {/* Process Overview (Page 2) */}
       <Section id="process" className="bg-[#0e111d]">
         <div className="text-center mb-10">
